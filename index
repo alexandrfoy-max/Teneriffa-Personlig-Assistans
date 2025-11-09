@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hemhjälp Teneriffa - Välj Språk</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f0f8ff;
+        }
+        .language-options {
+            margin: 50px auto;
+            max-width: 400px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 20px;
+            margin: 20px 0;
+            font-size: 18px;
+            text-decoration: none;
+            background-color: #2c5aa0;
+            color: white;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #1e3d6f;
+        }
+    </style>
+</head>
+<body>
+    <h1>Välkommen till Hemhjälp Teneriffa</h1>
+    <p>Välj ditt språk / Choose your language</p>
+    
+    <div class="language-options">
+        <a href="sv/index.html" class="btn">🇸🇪 Svenska</a>
+        <a href="en/index.html" class="btn">🇬🇧 English</a>
+    </div>
+</body>
+</html>
