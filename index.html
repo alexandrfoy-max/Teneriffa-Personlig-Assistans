@@ -3,42 +3,416 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hemhjälp Teneriffa - Välj Språk</title>
+    <title>Hemby Teneriffa - Hemtjänst för pensionärer</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background-color: #f0f8ff;
+            line-height: 1.6;
+            color: #333;
+            background-color: #FFFFFF;
         }
-        .language-options {
-            margin: 50px auto;
-            max-width: 400px;
+
+        /* Header */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background-color: #FFFFFF;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 20px;
-            margin: 20px 0;
-            font-size: 18px;
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #98FB98;
+        }
+
+        .nav-links a {
+            color: #333;
             text-decoration: none;
-            background-color: #2c5aa0;
-            color: white;
-            border-radius: 8px;
-            transition: background-color 0.3s;
+            margin-left: 2rem;
+            font-weight: 500;
         }
+
+        .nav-links a:hover {
+            color: #98FB98;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            background: rgba(0,0,0,0.6);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn.primary {
+            background-color: #98FB98;
+            color: #333;
+        }
+
+        .btn.secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
         .btn:hover {
-            background-color: #1e3d6f;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: #FFFFFF;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(152, 251, 152, 0.2);
+            border-left: 4px solid #FFB6C1;
+        }
+
+        .service-card h3 {
+            color: #98FB98;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Image Sections */
+        .image-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .image-content {
+            padding: 2rem;
+        }
+
+        .service-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Philosophy */
+        .philosophy {
+            background: linear-gradient(135deg, #98FB98 0%, #FFB6C1 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .philosophy-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Pricing */
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: #FFFFFF;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 2px solid #98FB98;
+        }
+
+        .price {
+            font-size: 2rem;
+            color: #98FB98;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(152, 251, 152, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #FFB6C1;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links a {
+                margin-left: 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content {
+                padding: 1rem;
+            }
+
+            .image-section {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Välkommen till Hemhjälp Teneriffa</h1>
-    <p>Välj ditt språk / Choose your language</p>
-    
-    <div class="language-options">
-        <a href="sv/index.html" class="btn">🇸🇪 Svenska</a>
-        <a href="en/index.html" class="btn">🇬🇧 English</a>
-    </div>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="logo">Hemby Teneriffa</div>
+            <div class="nav-links">
+                <a href="#hem">Hem</a>
+                <a href="#tjänster">Tjänster</a>
+                <a href="#priser">Priser</a>
+                <a href="#om-oss">Om Oss</a>
+                <a href="#kontakt">Kontakt</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hem">
+        <video class="hero-video" autoplay muted loop>
+            <source src="background-video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1>Hjälp av samma bekanta person</h1>
+            <p>Vi erbjuder ett brett utbud av hemvårdstjänster i hela Teneriffa. Alltid samma hjälpare, pålitligt och utan brådska.</p>
+            <a href="#kontakt" class="btn primary">Boka kostnadsfri konsultation</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="tjänster">
+        <h2 class="section-title">Våra Tjänster</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Utepromenader</h3>
+                <p>Följeslagande på promenader i den vackra naturen på Teneriffa</p>
+            </div>
+            <div class="service-card">
+                <h3>Följeslagande</h3>
+                <p>Vi följer med dig på dina ärenden och ger dig tryggt sällskap</p>
+            </div>
+            <div class="service-card">
+                <h3>Butiksbesök</h3>
+                <p>Hjälp med matinköp och andra besök i butiker</p>
+            </div>
+            <div class="service-card">
+                <h3>Sällskap och omsorg</h3>
+                <p>Gemensamma aktiviteter och vardaglig omsorg</p>
+            </div>
+            <div class="service-card">
+                <h3>Vardagssysslor</h3>
+                <p>Hjälp med alla typer av vardagliga sysslor och ärenden</p>
+            </div>
+            <div class="service-card">
+                <h3>Hjälp med hemelektronik</h3>
+                <p>Support med mobiler, datorer, TV och annan teknik</p>
+            </div>
+            <div class="service-card">
+                <h3>Diskande</h3>
+                <p>Hjälp med diska och kökssysslor</p>
+            </div>
+            <div class="service-card">
+                <h3>Bykande</h3>
+                <p>Hjälp med tvätt och byk</p>
+            </div>
+            <div class="service-card">
+                <h3>Föra ut soporna</h3>
+                <p>Hjälp med sophantering</p>
+            </div>
+            <div class="service-card">
+                <h3>Duschhjälp och personlig hygien</h3>
+                <p>Stöd och hjälp med personlig hygien</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Walking Service Image Section -->
+    <section class="image-section">
+        <div class="image-content">
+            <h3>Trygga promenader i Teneriffas vackra miljöer</h3>
+            <p>Vi följer gärna med dig på promenader i den underbara naturen som Teneriffa har att erbjuda. Tillsammans kan vi utforska sköna promenadvägar med havsvyer, vackra parker och trevliga stadsdelar.</p>
+        </div>
+        <img src="walking-photo.png" alt="Utepromenader i Teneriffa" class="service-image">
+    </section>
+
+    <!-- Repair Service Image Section -->
+    <section class="image-section">
+        <img src="repair-photo.png" alt="Hemmafix på Teneriffa" class="service-image">
+        <div class="image-content">
+            <h3>Hjälp med hemmafix och reparationer</h3>
+            <p>Behöver du hjälp med småreparationer hemma? Vi fixar allt från möbler och el till VVS. Som familjeföretag bryr vi oss om att allt ska fungera bra i ditt hem.</p>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy" id="om-oss">
+        <div class="philosophy-content">
+            <h2 class="section-title">Vår Filosofi</h2>
+            <p>Vi är ett familjeföretag som ser våra kunder som en del av vår egen familj. När du väljer Hemby Teneriffa får du inte bara en service – du får någon som verkligen bryr sig.</p>
+            <p>För oss handlar det inte bara om att utföra tjänster, utan om att skapa meningsfulla relationer och ge dig en känsla av trygghet i vardagen här på Teneriffa.</p>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="priser">
+        <h2 class="section-title">Våra Priser</h2>
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <h3>Abonnemang</h3>
+                <div class="price">250€/månad</div>
+                <p>12 timmar i månaden som du kan använda fritt</p>
+                <p>Valfria tjänster från vår lista</p>
+                <p>Flexibel schemaläggning - 1-2 besök per vecka</p>
+                <p>Inga bindningstider</p>
+            </div>
+            <div class="pricing-card">
+                <h3>Engångsbesök</h3>
+                <div class="price">25€/timmen</div>
+                <p>Perfekt för enstaka ärenden</p>
+                <p>Inga minimitider</p>
+                <p>Betala bara för den tid vi jobbar</p>
+                <p>Inga bindningstider</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontakt">
+        <h2 class="section-title">Boka Kostnadsfri Konsultation</h2>
+        <div class="contact-form">
+            <form>
+                <div class="form-group">
+                    <label for="name">Namn</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefon</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-post (valfritt)</label>
+                    <input type="email" id="email">
+                </div>
+                <button type="submit" class="btn primary" style="width: 100%">Skicka förfrågan</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Hemby Teneriffa. Alla rättigheter förbehållna.</p>
+    </footer>
 </body>
 </html>
