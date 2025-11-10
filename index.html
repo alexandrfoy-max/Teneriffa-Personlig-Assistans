@@ -14,8 +14,8 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #FFFFFF;
+            color: #2C3E50;
+            background-color: #F8F9FA;
         }
 
         /* Header */
@@ -24,25 +24,26 @@
             justify-content: space-between;
             align-items: center;
             padding: 1rem 5%;
-            background-color: #FFFFFF;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: #2C3E50;
+            color: white;
         }
 
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
-            color: #98FB98;
+            color: #9370DB;
         }
 
         .nav-links a {
-            color: #333;
+            color: white;
             text-decoration: none;
             margin-left: 2rem;
             font-weight: 500;
+            transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: #98FB98;
+            color: #9370DB;
         }
 
         /* Hero Section */
@@ -65,9 +66,10 @@
             transform: translate(-50%, -50%);
             text-align: center;
             color: white;
-            background: rgba(0,0,0,0.6);
+            background: rgba(44, 62, 80, 0.8);
             padding: 2rem;
             border-radius: 10px;
+            max-width: 600px;
         }
 
         .hero h1 {
@@ -93,8 +95,8 @@
         }
 
         .btn.primary {
-            background-color: #98FB98;
-            color: #333;
+            background-color: #9370DB;
+            color: white;
         }
 
         .btn.secondary {
@@ -105,7 +107,7 @@
 
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(147, 112, 219, 0.4);
         }
 
         /* Sections */
@@ -116,7 +118,32 @@
         .section-title {
             text-align: center;
             margin-bottom: 3rem;
-            color: #333;
+            color: #2C3E50;
+        }
+
+        /* Philosophy Section - Now at the top */
+        .philosophy {
+            background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .philosophy-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .philosophy h2 {
+            color: #9370DB;
+            margin-bottom: 2rem;
+        }
+
+        .exclusive {
+            background: rgba(147, 112, 219, 0.2);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            border-left: 4px solid #9370DB;
         }
 
         /* Services */
@@ -132,12 +159,17 @@
             background: #FFFFFF;
             padding: 2rem;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(152, 251, 152, 0.2);
-            border-left: 4px solid #FFB6C1;
+            box-shadow: 0 5px 15px rgba(44, 62, 80, 0.1);
+            border-top: 4px solid #9370DB;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
         }
 
         .service-card h3 {
-            color: #98FB98;
+            color: #2C3E50;
             margin-bottom: 1rem;
             font-size: 1.3rem;
         }
@@ -146,7 +178,7 @@
         .image-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            gap: 3rem;
             max-width: 1200px;
             margin: 0 auto;
             align-items: center;
@@ -156,24 +188,18 @@
             padding: 2rem;
         }
 
+        .image-content h3 {
+            color: #2C3E50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
         .service-image {
             width: 100%;
             height: 400px;
             object-fit: cover;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        /* Philosophy */
-        .philosophy {
-            background: linear-gradient(135deg, #98FB98 0%, #FFB6C1 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .philosophy-content {
-            max-width: 800px;
-            margin: 0 auto;
+            box-shadow: 0 8px 25px rgba(44, 62, 80, 0.2);
         }
 
         /* Pricing */
@@ -189,14 +215,19 @@
             background: #FFFFFF;
             padding: 2rem;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(44, 62, 80, 0.1);
             text-align: center;
-            border: 2px solid #98FB98;
+            border: 2px solid #9370DB;
+            transition: transform 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
         }
 
         .price {
             font-size: 2rem;
-            color: #98FB98;
+            color: #9370DB;
             font-weight: bold;
             margin: 1rem 0;
         }
@@ -208,7 +239,7 @@
             background: #FFFFFF;
             padding: 2rem;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(152, 251, 152, 0.2);
+            box-shadow: 0 5px 15px rgba(44, 62, 80, 0.1);
         }
 
         .form-group {
@@ -218,21 +249,22 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            color: #333;
+            color: #2C3E50;
             font-weight: bold;
         }
 
         .form-group input {
             width: 100%;
             padding: 12px;
-            border: 2px solid #FFB6C1;
+            border: 2px solid #9370DB;
             border-radius: 5px;
             font-size: 1rem;
+            background-color: #F8F9FA;
         }
 
         /* Footer */
         footer {
-            background-color: #333;
+            background-color: #2C3E50;
             color: white;
             text-align: center;
             padding: 2rem;
@@ -256,6 +288,7 @@
             
             .hero-content {
                 padding: 1rem;
+                margin: 0 1rem;
             }
 
             .image-section {
@@ -271,9 +304,9 @@
             <div class="logo">Hemby Teneriffa</div>
             <div class="nav-links">
                 <a href="#hem">Hem</a>
+                <a href="#filosofi">Vår Filosofi</a>
                 <a href="#tjänster">Tjänster</a>
                 <a href="#priser">Priser</a>
-                <a href="#om-oss">Om Oss</a>
                 <a href="#kontakt">Kontakt</a>
             </div>
         </nav>
@@ -288,6 +321,22 @@
             <h1>Hjälp av samma bekanta person</h1>
             <p>Vi erbjuder ett brett utbud av hemvårdstjänster i hela Teneriffa. Alltid samma hjälpare, pålitligt och utan brådska.</p>
             <a href="#kontakt" class="btn primary">Boka kostnadsfri konsultation</a>
+        </div>
+    </section>
+
+    <!-- Philosophy Section - NOW AT THE TOP -->
+    <section class="philosophy" id="filosofi">
+        <div class="philosophy-content">
+            <h2 class="section-title">Vår Filosofi - Exklusiv Omsorg</h2>
+            <p>Vi är ett familjeföretag som ser våra kunder som en del av vår egen familj. När du väljer Hemby Teneriffa får du inte bara en service – du får någon som verkligen bryr sig.</p>
+            
+            <div class="exclusive">
+                <h3>Begränsad Antal Kunder för Optimal Kvalitet</h3>
+                <p>För att säkerställa högsta möjliga kvalitet och personligt engagemang, arbetar vi med ett begränsat antal kunder. Detta gör vår approach mer mänsklig, pålitlig och exklusiv.</p>
+                <p>Varje kund får den tid och uppmärksamhet de förtjänar, utan att någonsin känna sig förhastad eller övergiven.</p>
+            </div>
+
+            <p style="margin-top: 2rem;">För oss handlar det inte bara om att utföra tjänster, utan om att skapa meningsfulla relationer och ge dig en känsla av trygghet i vardagen här på Teneriffa.</p>
         </div>
     </section>
 
@@ -356,15 +405,6 @@
         </div>
     </section>
 
-    <!-- Philosophy Section -->
-    <section class="philosophy" id="om-oss">
-        <div class="philosophy-content">
-            <h2 class="section-title">Vår Filosofi</h2>
-            <p>Vi är ett familjeföretag som ser våra kunder som en del av vår egen familj. När du väljer Hemby Teneriffa får du inte bara en service – du får någon som verkligen bryr sig.</p>
-            <p>För oss handlar det inte bara om att utföra tjänster, utan om att skapa meningsfulla relationer och ge dig en känsla av trygghet i vardagen här på Teneriffa.</p>
-        </div>
-    </section>
-
     <!-- Pricing Section -->
     <section id="priser">
         <h2 class="section-title">Våra Priser</h2>
@@ -416,4 +456,3 @@
     </footer>
 </body>
 </html>
-
